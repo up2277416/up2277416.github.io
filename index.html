@@ -13,9 +13,17 @@
         .section { background: var(--card); padding: 20px; border-radius: 10px; margin-bottom: 20px; border: 1px solid #30363d; }
         .badge { background: #238636; color: white; padding: 4px 8px; border-radius: 5px; font-size: 0.8rem; font-weight: bold; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        /* Table Styles */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
+        th, td { border: 1px solid #30363d; padding: 10px; text-align: left; }
+        th { background-color: #21262d; color: var(--accent); }
+        
         img { width: 100%; border-radius: 8px; border: 1px solid #30363d; margin-top: 10px; }
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -27,38 +35,66 @@
         </header>
 
         <div class="section">
-            <h2>🚀 Professional Profile</h2>
-            <p>Second-year student with a 1st-class average in Virtualisation and Enterprise Networking. Focused network infrastructure.</p>
+            <h2>About Me</h2>
+            <p>I am a second-year student at the <b>University of Portsmouth</b> with a 1st-class average in Virtualisation and Enterprise Networking. I am highly focused on the design and maintenance of robust network infrastructure.</p>
             <span class="badge">CCNA: SRWE</span> <span class="badge">CompTIA Net+ (In Progress)</span>
         </div>
 
         <div class="section">
-            <h2>🛠️ Personal home projects</h2>
+            <h2>Personal Home Projects</h2>
             <div class="grid">
                 <div>
                     <h3>Physical Infrastructure</h3>
-                    <p>I manually terminated <b>CAT 6 cabling</b> throughout my home, ensuring clean cable management and stable connectivity.</p>
-                    <div style="background:#21262d; height:150px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#8b949e;">[Insert Photo of Your Cables Here]</div>
+                    <p>I designed and implemented a structured <b>CAT 6 cabling system</b> from my lab to my router. By manually terminating custom cables, I optimized <b>Layer 1</b> of my home network to eliminate latency and ensure high-speed stability.</p>
+                    <div style="background:#21262d; height:150px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#8b949e;">[Insert Cable Photo Here]</div>
                 </div>
                 <div>
                     <h3>System Assembly</h3>
-                    <p>Built and validated multiple high-performance systems with a focus on hardware stability and driver optimization.</p>
-                    <div style="background:#21262d; height:150px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#8b949e;">[Insert Photo of Your PC Build Here]</div>
+                    <p>Assembled and validated high-performance workstations, focusing on <b>hardware stability</b> and professional cable management to ensure maximum uptime for virtualization labs[cite: 58, 59].</p>
+                    <div style="background:#21262d; height:150px; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#8b949e;">[Insert PC Photo Here]</div>
                 </div>
             </div>
+
+            <h3>Technical Reasoning: CAT 6 vs. CAT 5e</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>CAT 5e</th>
+                        <th>CAT 6 (My Choice)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><b>Frequency</b></td>
+                        <td>100 MHz</td>
+                        <td><b>250 MHz</b> (Better for high-load VM traffic)</td>
+                    </tr>
+                    <tr>
+                        <td><b>Crosstalk</b></td>
+                        <td>Standard</td>
+                        <td><b>Internal Spline</b> (Reduces NEXT/Signal Noise)</td>
+                    </tr>
+                    <tr>
+                        <td><b>Data Rate</b></td>
+                        <td>1 Gbps</td>
+                        <td><b>1-10 Gbps</b> (Higher throughput stability)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="section">
-            <h2>💻 Enterprise Projects</h2>
+            <h2>💻 Enterprise Networking Projects</h2>
             <ul>
-                <li><b>OSPF & BGP Deployment:</b> Configured 6-device topologies using Cisco equipment.</li>
-                <li><b>Virtualisation:</b> Managed cloud infrastructure using <b>OpenNebula</b> and <b>VMware</b>.</li>
-                <li><b>Linux Admin:</b> Set up secure Apache web servers on <b>Rocky Linux 8</b>.</li>
+                <li><b>OSPF & BGP Deployment:</b> Configured 6-device topologies using Cisco equipment, focusing on multi-area OSPF and link redundancy (EtherChannel)[cite: 20, 21, 26].</li>
+                <li><b>Virtualisation:</b> Achieved a <b>1st</b> in Cloud Design, managing infrastructure via <b>OpenNebula</b> and <b>VMware</b>[cite: 12, 14, 15].</li>
+                <li><b>Linux Admin:</b> Configured secure <b>Apache</b> web servers on <b>Rocky Linux 8</b> with virtual hosting and SSL certificates[cite: 10, 44].</li>
             </ul>
         </div>
 
         <footer style="text-align: center; margin-top: 50px; font-size: 0.8rem; color: #8b949e;">
-            &copy; 2026 Isaac Olajide • Hosted on GitHub Pages
+            &copy; 2026 Isaac Olajide • <a href="https://isaacolajide.me" style="color:#8b949e;">isaacolajide.me</a> • Hosted on GitHub Pages
         </footer>
     </div>
 </body>

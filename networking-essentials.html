@@ -3,37 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module Details | Isaac Olajide</title>
+    <title>Networking Essentials | Isaac Olajide</title>
     <style>
-        :root { --bg: #0d1117; --text: #c9d1d9; --accent: #58a6ff; --card: #161b22; }
+        :root { --bg: #0d1117; --text: #c9d1d9; --accent: #58a6ff; --card: #161b22; --border: #30363d; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: auto; }
-        .section { background: var(--card); padding: 30px; border-radius: 10px; margin-top: 50px; border: 1px solid #30363d; }
-        h1 { color: var(--accent); }
+        .container { max-width: 850px; margin: auto; }
+        .section { background: var(--card); padding: 30px; border-radius: 10px; margin-top: 20px; border: 1px solid var(--border); }
+        h1, h2, h3 { color: var(--accent); }
         a { color: var(--accent); text-decoration: none; }
         .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9rem; }
+        
+        /* Skills Grid Layout */
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .skill-box { background: #1c2128; padding: 20px; border-radius: 8px; border: 1px solid var(--border); display: flex; flex-direction: column; }
+        .skill-box h4 { margin-top: 0; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        .skill-box p { font-size: 0.9rem; margin-bottom: 15px; flex-grow: 1; }
+
+        /* Image Styling */
+        .project-img { width: 100%; border-radius: 6px; border: 1px solid var(--border); margin-top: auto; }
+
+        @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        
         <div class="section">
-            <a href="index.html" class="back-link">← Back to Portfolio</a>
             <h1>Networking Essentials</h1>
-            <hr style="border: 0; border-top: 1px solid #30363d; margin: 20px 0;">
+            <p>This module provided a foundational understanding of network architecture and the OSI model. I focused on designing logical topologies, calculating hardware requirements for business divisions, and implementing baseline security on Cisco network infrastructure.</p>
             
-            <h3>Module Overview</h3>
-            <p>Insert information about what you learned in this module here. For example: High-availability clusters, hypervisor management, and cloud infrastructure deployment.</p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 30px 0;">
 
-            <h3>Key Projects & Labs</h3>
-            <ul>
-                <li><b>Project Name:</b> Brief description of what you built.</li>
-                <li><b>Technical Skills:</b> VMware, OpenNebula, Cloud Architecture.</li>
-            </ul>
+            <h3>Skills Learned & Applied</h3>
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h4>LAN Topology & Capacity Planning</h4>
+                    <p>Designed a logical VLAN topology for seven different divisions such as a production division using <b>Cisco 2960-24TT switches</b>. Calculated port capacity requirements for 59 devices and implemented Gigabit Switch links to ensure high-speed backbone connectivity.</p>
+                    <img src="topology.png" alt="LAN Topology Diagram" class="project-img">
+                </div>
 
-            <div style="background:#21262d; padding:15px; border-radius:8px; margin-top:20px; border: 1px solid #30363d;">
-                <p style="margin:0; font-style: italic; color: #8b949e;">Tip: You can upload your PDF lab reports to GitHub and link them here!</p>
+                <div class="skill-box">
+                    <h4>Cisco IOS Security</h4>
+                    <p>Configured core security settings on network switches, including <b>VTY lines</b> for remote management and console access control. Implemented local user authentication to ensure that only authorized administrators can access the CLI.</p>
+                </div>
+
+                <div class="skill-box">
+                    <h4>Inter-vlan routing/IPv4 Addressing</h4>
+                    <p>Planned and implemented an IPv4 addressing scheme across the network based on how many devices were required in each division. Managed static IP assignments for end devices. I implemented a Router-on-a-Stick topology by configuring 802.1Q trunking on a single physical Router interface. By making use of virtual sub-interfaces, I created a cost-effective and scalable routing solution that handles traffic for multiple VLANs without the need for additional physical hardware.</p>
+                </div>
+
+                <div class="skill-box">
+                    <h4>Switching Logic & Full-Duplex</h4>
+                    <p>Used Ethernet switching to enable <b>full-duplex communication</b>, significantly reducing network congestion and minimizing unnecessary broadcast traffic, improving overall network reliability and performance.</p>
+                </div>
+            </div>
+
+            <div style="background:#21262d; padding:15px; border-radius:8px; margin-top:30px; border: 1px solid var(--border); text-align: center;">
+                <p style="margin:0; font-style: italic; color: #8b949e;">Technical Tools: Cisco IOS, 2960 Switches, Packet Tracer, Straight-through/Crossover Cabling, Cisco 4321 Routers </p>
             </div>
         </div>
+
+        <footer style="text-align: center; margin-top: 40px; font-size: 0.8rem; color: #8b949e;">
+            &copy; 2026 Isaac Olajide • <a href="index.html">Home</a>
+        </footer>
     </div>
 </body>
 </html>

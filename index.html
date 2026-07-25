@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Olajide | Computer Networks & Security Portfolio</title>
+    <title>Isaac Olajide | Network Infrastructure Portfolio</title>
     <style>
         :root { --bg: #0d1117; --text: #c9d1d9; --accent: #58a6ff; --card: #161b22; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; margin: 0; padding: 20px; }
@@ -23,6 +23,18 @@
         a { color: var(--accent); text-decoration: none; }
         a:hover { text-decoration: underline; }
 
+        /* Interactive Collapsible Titles */
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--accent);
+            user-select: none;
+        }
+        details summary:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
@@ -31,32 +43,65 @@
         <header>
             <h1>Isaac Olajide</h1>
             <p>BSc (Hons) Computer Networks & Security | University of Portsmouth</p>
-            <p><a href="mailto:Tolulopeolufemi2@hotmail.com">Email Me</a> • <a href="https://github.com/up2277416">GitHub</a> • <a href="https://www.linkedin.com/in/isaac-olajide-b2b067341/">LinkedIn</a></p>
+            <p><a href="mailto:Tolulopeolufemi2@hotmail.com">Email Me</a> • <a href="https://github.com/up2277416">GitHub</a></p>
         </header>
 
+        <!-- About Me Section -->
         <div class="section">
             <h2>About Me</h2>
-            <p>I am a second-year Computer Networks and Security student at the University of Portsmouth, with a passion for a career intechnology, currently looking for a Year in Industry placement to gain hands-on experience in the IT/Networking industry.</p>
+            <p>I am a second-year Computer Networks and Security student at the University of Portsmouth, with a passion for a career in technology, currently looking for a Year in Industry placement to gain hands-on experience in the IT/Networking industry.</p>
             <span class="badge">CCNA: SRWE</span>
         </div>
 
+        <!-- Homelab Projects Section (Collapsible Links) -->
+        <div class="section">
+            <h2>Homelab & Infrastructure Projects</h2>
+            
+            <!-- Network DNS & Remote VPN Box -->
+            <details style="background: #1c2128; padding: 15px 20px; border-radius: 8px; border: 1px solid #30363d; margin-bottom: 15px;">
+                <summary>Network-wide DNS & Remote VPN</summary>
+                <div style="margin-top: 15px; border-top: 1px solid #30363d; padding-top: 15px;">
+                    <p style="font-size: 0.9rem; margin-top: 0;">Deployed <b>AdGuard Home</b> on a Raspberry Pi as a primary network DNS sinkhole. Linked the environment with <b>Tailscale</b> for encrypted, split-tunnel access without exposing open ports to the public internet.</p>
+                    <div style="margin-top: 15px; display: flex; gap: 6px; flex-wrap: wrap;">
+                        <span class="badge">Completed</span>
+                        <span class="badge" style="background: #30363d;">Raspberry Pi</span>
+                        <span class="badge" style="background: #30363d;">AdGuard</span>
+                        <span class="badge" style="background: #30363d;">Tailscale</span>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Proxmox VE Box -->
+            <details style="background: #1c2128; padding: 15px 20px; border-radius: 8px; border: 1px solid #30363d;">
+                <summary>Proxmox VE & Active Directory Node</summary>
+                <div style="margin-top: 15px; border-top: 1px solid #30363d; padding-top: 15px;">
+                    <p style="font-size: 0.9rem; margin-top: 0;">Deploying a bare-metal <b>Proxmox VE</b> hypervisor on a Dell mini PC to host Windows Server Active Directory, ticketing systems and Linux containers (LXC).</p>
+                    <div style="margin-top: 15px; display: flex; gap: 6px; flex-wrap: wrap;">
+                        <span class="badge" style="background: #FF8800;">In Progress</span>
+                        <span class="badge" style="background: #30363d;">Proxmox</span>
+                        <span class="badge" style="background: #30363d;">Active Directory</span>
+                        <span class="badge" style="background: #30363d;">Ticketing Systems</span>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <!-- Personal Hardware Projects Section -->
         <div class="section">
             <h2>Personal Home Projects</h2>
             <div class="grid">
                 <div>
                     <h3>Physical Infrastructure</h3>
-                    <p>I did some network termination of CAT 6 ethernet cabling from a room upstairs with cables passing outside along the walls to an available entry point where my Router is located. I did this due to me wanting to have a stable high speed connection which helps eliminate problems like high latency.</p>
-                </div> <div>
-                
+                    <p>I did some network termination of CAT 6 ethernet cabling with cables passing outside along the walls to an available entry point where the Router is located.</p>
+                </div> 
+                <div>
                     <h3>Custom Computer System Assembly</h3>
-                    <p> I have Assembled and validated high-performance custom computers,while ensuring hardware stability and professional cable management to ensure that the computer runs well and for its intended use.</p>
-                    
+                    <p>I have Assembled and validated high-performance custom computers, while ensuring hardware stability and professional cable management to ensure that the computer runs well and for its intended use.</p>
+                </div>
             </div>
-
-        
-        
         </div>
 
+        <!-- University Modules & Projects Section -->
         <div class="section">
             <h2>University Modules & Projects</h2>
             <p>Click on a module below to view my technical labs, and uni projects:</p>
@@ -79,7 +124,6 @@
                 </li>
             </ul>
         </div>
-        
 
         <footer style="text-align: center; margin-top: 50px; font-size: 0.8rem; color: #8b949e;">
             &copy; 2026 Isaac Olajide • <a href="index.html">Home</a> • Hosted on GitHub Pages
